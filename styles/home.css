@@ -51,8 +51,7 @@
 	justify-content: center;
 }
 
-.icon-burger,
-#main-menu__toggle {
+.icon-burger {
 	display: none;
 }
 
@@ -70,14 +69,20 @@
 	align-items: center;
 }
 
-.menu__theme ul .icon__button {
+.menu__theme ul #theme_btn {
 	cursor: pointer;
 	background-color: transparent;
+	height: 100%;
 }
 
 main {
 	position: relative;
 	overflow: hidden;
+}
+
+main img {
+	opacity: 0;
+	filter: blur(20px);
 }
 
 .main__whatsapp {
