@@ -5,8 +5,8 @@
 	--blur: 2px;
 	--nav-height: 80px;
 	--nav-logo-dimensions: calc(var(--nav-height) - 15px);
-	position: absolute;
-	background-color: #00000071;
+	position: fixed;
+	background-color: #000000b2;
 	max-height: var(--nav-height);
 	z-index: 1;
 }
@@ -15,11 +15,23 @@
 	.nav-bar {
 		backdrop-filter: blur(var(--blur, 5px));
 	}
+
+	@media only screen and (max-width: 775px) {
+		.icon-burger__open.show ~ .links_list__list::before {
+			backdrop-filter: blur(var(--blur, 5px));
+		}
+	}
 }
 
 @supports not (backdrop-filter: blur()) {
 	.nav-bar {
 		backdrop-filter: blur(var(--blur, 5px));
+	}
+
+	@media only screen and (max-width: 775px) {
+		.icon-burger__open.show ~ .links_list__list::before {
+			backdrop-filter: blur(var(--blur, 5px));
+		}
 	}
 }
 
@@ -37,6 +49,11 @@
 
 .links_list__list {
 	justify-content: center;
+}
+
+.icon-burger,
+#main-menu__toggle {
+	display: none;
 }
 
 .list__item a {
@@ -67,4 +84,77 @@ main {
 	position: absolute;
 	bottom: 2%;
 	right: 2%;
+	z-index: 3;
+}
+
+@media only screen and (max-width: 775px) {
+	.nav-bar__menu {
+		grid-template-columns: 1fr 1fr 0.2fr;
+		gap: 1rem;
+	}
+	.icon-burger {
+		display: inline-block;
+		cursor: pointer;
+		position: relative;
+		background-color: #706868;
+		border-radius: 0.375rem;
+		width: 45px;
+		height: 45px;
+		transition: opacity 0.2s 0.15s ease;
+	}
+	.icon-burger__open ~ .links_list__list {
+		width: 0;
+		overflow: hidden;
+		transition: width 0.2s ease;
+	}
+	.icon-burger__open.show ~ .links_list__list {
+		--list-width: 60%;
+		display: flex;
+		overflow: visible;
+		width: var(--list-width);
+	}
+
+	.menu__theme {
+		grid-column: 2/3;
+		grid-row: 1;
+	}
+
+	.links_list__list {
+		position: fixed;
+		padding: var(--p-2) 0;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: var(--list-width);
+		height: 100vh;
+		top: 0;
+		right: 0;
+		background-color: #232323;
+	}
+
+	.links_list__list::before {
+		position: inherit;
+		content: "";
+		left: 0;
+		top: 0;
+		width: calc(100vw - var(--list-width));
+		height: 100vh;
+		background-color: #23232393;
+		transition: background-color 0.2s ease;
+	}
+
+	.icon-burger__close {
+		position: absolute;
+		top: 3%;
+		right: 5%;
+	}
+
+	.links_list__list .list__item,
+	.links_list__list .list__item a {
+		width: 80%;
+	}
+
+	.links_list__list .list__item a {
+		text-align: center;
+	}
 }
