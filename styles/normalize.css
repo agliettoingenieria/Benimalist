@@ -28,6 +28,7 @@ body {
 	);
 	font-size: var(--fs-normal);
 	font-weight: var(--fw-normal);
+	overflow-x: hidden;
 }
 
 ul {
