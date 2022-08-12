@@ -8,7 +8,10 @@
 	position: fixed;
 	background-color: #000000b2;
 	max-height: var(--nav-height);
+	opacity: 0;
 	z-index: 1;
+	overflow: hidden;
+	transition: opacity 0.2s ease-in-out;
 }
 
 @supports (backdrop-filter: blur()) {

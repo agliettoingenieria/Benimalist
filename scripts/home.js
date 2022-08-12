@@ -2,6 +2,11 @@ const mainImgContainer = $(".img-container");
 const burgerBtn = $("#menu_btn");
 const linksList = $(".links_list__list");
 const themeBtn = $("#theme_btn");
+const nav = $(".nav-bar");
+
+window.addEventListener("DOMContentLoaded", (_) => {
+	nav.style.opacity = 1;
+});
 
 const image = new Image();
 let load = 0;
