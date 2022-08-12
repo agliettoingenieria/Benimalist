@@ -17,7 +17,7 @@
 	}
 
 	@media only screen and (max-width: 775px) {
-		.icon-burger__open.show ~ .links_list__list::before {
+		.links_list__list::before {
 			backdrop-filter: blur(var(--blur, 5px));
 		}
 	}
@@ -29,7 +29,7 @@
 	}
 
 	@media only screen and (max-width: 775px) {
-		.icon-burger__open.show ~ .links_list__list::before {
+		.links_list__list::before {
 			backdrop-filter: blur(var(--blur, 5px));
 		}
 	}
@@ -92,6 +92,7 @@ main {
 		grid-template-columns: 1fr 1fr 0.2fr;
 		gap: 1rem;
 	}
+
 	.icon-burger {
 		display: inline-block;
 		cursor: pointer;
@@ -101,17 +102,20 @@ main {
 		width: 45px;
 		height: 45px;
 		transition: opacity 0.2s 0.15s ease;
+		z-index: 3;
 	}
-	.icon-burger__open ~ .links_list__list {
-		width: 0;
+
+	.links_list__list {
+		--list-width: 0;
+		width: var(--list-width);
 		overflow: hidden;
 		transition: width 0.2s ease;
 	}
-	.icon-burger__open.show ~ .links_list__list {
+	.links_list__list.show {
 		--list-width: 60%;
+		width: var(--list-width);
 		display: flex;
 		overflow: visible;
-		width: var(--list-width);
 	}
 
 	.menu__theme {
@@ -141,12 +145,6 @@ main {
 		height: 100vh;
 		background-color: #23232393;
 		transition: background-color 0.2s ease;
-	}
-
-	.icon-burger__close {
-		position: absolute;
-		top: 3%;
-		right: 5%;
 	}
 
 	.links_list__list .list__item,
