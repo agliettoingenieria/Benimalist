@@ -49,6 +49,12 @@
 
 .menu__theme ul {
 	justify-content: flex-end;
+	align-items: center;
+}
+
+.menu__theme ul .icon__button {
+	cursor: pointer;
+	background-color: transparent;
 }
 
 main {

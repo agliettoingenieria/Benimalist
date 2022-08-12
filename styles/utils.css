@@ -75,6 +75,11 @@
 	display: grid;
 }
 
+.icon {
+	width: 45px;
+	height: 45px;
+}
+
 .full-w {
 	width: var(--full-w);
 }
