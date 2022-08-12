@@ -8,6 +8,7 @@
 	position: absolute;
 	background-color: #00000071;
 	max-height: var(--nav-height);
+	z-index: 1;
 }
 
 @supports (backdrop-filter: blur()) {
@@ -58,5 +59,12 @@
 }
 
 main {
+	position: relative;
 	overflow: hidden;
+}
+
+.main__whatsapp {
+	position: absolute;
+	bottom: 2%;
+	right: 2%;
 }
