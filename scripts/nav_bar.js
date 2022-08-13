@@ -6,6 +6,12 @@ const aElements = linksList.querySelectorAll(".list__item a");
 const themeBtn = $("#theme_btn");
 const nav = $(".nav-bar");
 
+if (JSON.parse(window.localStorage.getItem("settings")).theme === "bg-dark") {
+	themeBtn.children[0].setAttribute("src", "/assets/icons/Moon_Icon.svg");
+} else {
+	themeBtn.children[0].setAttribute("src", "/assets/icons/Sun_Icon.svg");
+}
+
 document.addEventListener("DOMContentLoaded", (_) => {
 	nav.style.opacity = 1;
 	const currentPath = window.location.pathname;
