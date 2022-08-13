@@ -14,6 +14,8 @@
 
 	/* Font Size */
 	--fs-normal: 1rem;
+	--fs-main: 2rem;
+	--fs-ultra: 2.75rem;
 
 	/* Font Weight */
 	--fw-normal: 400;
@@ -59,13 +61,21 @@
 	font-size: var(--fs-normal);
 }
 
+.fs-main {
+	font-size: var(--fs-main);
+}
+
+.fs-ultra {
+	font-size: var(--fs-ultra);
+}
+
 .fw-normal {
 	font-weight: var(--fw-normal);
 }
 
 .container {
 	width: 100%;
-	height: var(--full-h);
+	height: 100%;
 }
 
 .flex {
@@ -170,6 +180,10 @@
 	padding-right: var(--p-3);
 }
 
+.m-auto {
+	margin: auto;
+}
+
 .gap-1 {
 	gap: var(--gap-1);
 }
@@ -180,4 +194,8 @@
 
 .gap-3 {
 	gap: var(--gap-3);
+}
+
+.txt-middle {
+	text-align: center;
 }
