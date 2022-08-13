@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/styles/gallery.css">
+	<link rel="stylesheet" href="/styles/nav-bar.css">
+	<script type="module" src="/scripts/settings.js"></script>
+	<script type="module" src="/scripts/nav_bar.js"></script>
+	<script type="module" src="/scripts/gallery.js"></script>
+	<title>BeNimalist - Galería</title>
+</head>
+
+<body>
+	<nav class="nav-bar container pt-1 pb-1 plr-2">
+		<ul class="nav-bar__menu grid">
+			<li class="menu__logo">
+				<a href="/" tabindex="1">
+					<img src="/assets/images/001-.jpg" alt="Logo">
+				</a>
+			</li>
+			<li class="menu__links_list">
+				<button class="icon icon-burger" id="menu_btn" tabindex="1"><img src="/assets/icons/menu-burger-open.png"
+						alt="Open Menu" /></button>
+				<ul class="links_list__list flex gap-3 txt-light">
+					<li class="list__item"><a class="p-1 txt-middle" tabindex="2" href="/pages/about-us.html">Nosotros</a></li>
+					<li class="list__item"><a class="p-1 txt-middle" tabindex="3" href="/pages/gallery.html">Galeria</a></li>
+					<li class="list__item"><a class="p-1 txt-middle" tabindex="4" href="#">Contactanos</a></li>
+				</ul>
+			</li>
+			<li class="menu__theme icon w-full">
+				<button id="theme_btn" class="icon__button"><img src="/assets/icons/Sun_Icon.svg"
+						alt="Icono cambio de tema"></button>
+			</li>
+		</ul>
+	</nav>
+
+	<main>
+		<div class="container">
+			<h1 class="fs-ultra title txt-middle">Galería</h1>
+			<section class="gallery-container container grid m-auto">
+				<article class="img-container">
+					<img src="/assets/images/EXTERIOR_48 - Foto 2.jpg" alt="Imagen Galeria">
+				</article>
+				<article class="img-container">
+					<img src="/assets/images/EXTERIOR_48 - Foto 2.jpg" alt="Imagen Galeria">
+				</article>
+				<article class="img-container">
+					<img src="/assets/images/EXTERIOR_48 - Foto 2.jpg" alt="Imagen Galeria">
+				</article>
+				<article class="img-container">
+					<img src="/assets/images/EXTERIOR_48 - Foto 2.jpg" alt="Imagen Galeria">
+				</article>
+				<article class="img-container">
+					<img src="/assets/images/EXTERIOR_48 - Foto 2.jpg" alt="Imagen Galeria">
+				</article>
+			</section>
+		</div>
+	</main>
+
+</body>
+
+</html>

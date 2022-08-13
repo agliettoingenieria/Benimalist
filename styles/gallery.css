@@ -1,0 +1,33 @@
+@import "./utils.css";
+@import "./normalize.css";
+
+main {
+	padding-top: 120px;
+}
+
+.title {
+	margin-bottom: 3rem;
+	padding: 1rem 0;
+}
+
+.gallery-container {
+	width: 75%;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 340px));
+	justify-content: center;
+	gap: 0.375rem;
+	margin-bottom: 4rem;
+}
+
+.img-container {
+	position: relative;
+	opacity: 0;
+	left: -5px;
+	border-radius: 0.375rem;
+	overflow: hidden;
+	transition: opacity 0.1s ease, 0.6s 0.2s ease;
+}
+
+.img-container.show {
+	opacity: 1;
+	left: 0px;
+}
