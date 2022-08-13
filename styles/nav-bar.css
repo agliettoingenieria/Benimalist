@@ -1,13 +1,23 @@
+:root {
+	--nav-height: 80px;
+	--nav-bg: #000000b2;
+}
+
 .nav-bar {
 	--blur: 2px;
-	--nav-height: 80px;
 	--nav-logo-dimensions: calc(var(--nav-height) - 15px);
 	position: fixed;
-	background-color: #000000b2;
+	top: 0;
+	left: 0;
+	background-color: var(--nav-bg);
 	max-height: var(--nav-height);
 	opacity: 0;
 	z-index: 1;
-	transition: opacity 0.2s ease-in-out;
+	transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.bg-dark .nav-bar {
+	--nav-bg: #1b2136;
 }
 
 @supports (backdrop-filter: blur()) {
@@ -29,6 +39,10 @@
 .nav-bar__menu {
 	grid-template-columns: 1fr 2fr 1fr;
 	align-items: center;
+}
+
+.nav-bar__menu li:not(.menu__logo) {
+	width: 100%;
 }
 
 .menu__logo {
@@ -55,12 +69,12 @@
 	background-color: #1f4a8aa6;
 }
 
-.menu__theme ul {
-	justify-content: flex-end;
-	align-items: center;
+.menu__theme {
+	text-align: end;
+	z-index: 3;
 }
 
-.menu__theme ul #theme_btn {
+.menu__theme #theme_btn {
 	cursor: pointer;
 	background-color: transparent;
 	height: 100%;
@@ -84,12 +98,6 @@
 		z-index: 3;
 	}
 
-	.links_list__list {
-		--list-width: 0;
-		width: var(--list-width);
-		overflow: hidden;
-		transition: width 0.2s ease;
-	}
 	.links_list__list.show {
 		--list-width: 60%;
 		width: var(--list-width);
@@ -103,6 +111,7 @@
 	}
 
 	.links_list__list {
+		--list-width: 0;
 		position: fixed;
 		padding: var(--p-2) 0;
 		flex-direction: column;
@@ -112,7 +121,9 @@
 		height: 100vh;
 		top: 0;
 		right: 0;
-		background-color: #232323;
+		overflow: hidden;
+		transition: width 0.2s ease, background-color 0.2s ease-in-out;
+		background-color: var(--nav-bg);
 	}
 
 	.links_list__list::before {
@@ -120,9 +131,9 @@
 		content: "";
 		left: 0;
 		top: 0;
-		width: calc(100vw - var(--list-width));
+		width: calc(100% - var(--list-width));
 		height: 100vh;
-		background-color: #23232393;
+		background-color: #000000d3;
 		transition: background-color 0.2s ease;
 	}
 
