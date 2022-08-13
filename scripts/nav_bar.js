@@ -15,12 +15,19 @@ burgerBtn.addEventListener("click", (e) => {
 themeBtn.addEventListener("click", (e) => {
 	const bodyElement = document.body;
 	const themeBtnImg = themeBtn.children[0];
-
+	if (!bodyElement.getAttribute("class")) {
+		bodyElement.classList.add("bg-dark");
+		return;
+	}
+	let bodyTheme = bodyElement.getAttribute("class");
 	if (bodyElement.getAttribute("class") === "bg-light") {
 		bodyElement.classList.replace("bg-light", "bg-dark");
+		bodyTheme = "bg-dark";
 		themeBtnImg.setAttribute("src", "/assets/icons/Moon_Icon.svg");
-	} else {
+	} else if (bodyElement.getAttribute("class") === "bg-dark") {
 		bodyElement.classList.replace("bg-dark", "bg-light");
+		bodyTheme = "bg-light";
 		themeBtnImg.setAttribute("src", "/assets/icons/Sun_Icon.svg");
 	}
+	window.localStorage.setItem("settings", JSON.stringify({ theme: bodyTheme }));
 });
