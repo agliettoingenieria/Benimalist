@@ -4,8 +4,9 @@
 	--bg-light: #ffffff;
 
 	/* Text Color */
-	--txt-dark: #2c2424b2;
+	--txt-dark: #000000;
 	--txt-light: #ffffff;
+	--txt-gray: #2c2424b2;
 
 	/* Font Family */
 	--ff-normal: serif, sans-serif, Arial, Helvetica, -apple-system,
@@ -14,11 +15,13 @@
 
 	/* Font Size */
 	--fs-normal: 1rem;
+	--fs-normal2: 1.25rem;
 	--fs-main: 2rem;
 	--fs-ultra: 2.75rem;
 
 	/* Font Weight */
 	--fw-normal: 400;
+	--fw-bold: bold;
 
 	/* Paddings */
 	--p-1: 0.5rem;
@@ -53,12 +56,20 @@
 	color: var(--txt-light);
 }
 
+.txt-gray {
+	color: var(--txt-gray);
+}
+
 .ff-normal {
 	font-family: var(--ff-normal);
 }
 
 .fs-normal {
 	font-size: var(--fs-normal);
+}
+
+.fs-normal2 {
+	font-size: var(--fs-normal2);
 }
 
 .fs-main {
@@ -71,6 +82,10 @@
 
 .fw-normal {
 	font-weight: var(--fw-normal);
+}
+
+.fw-bold {
+	font-weight: var(--fw-bold);
 }
 
 .container {
