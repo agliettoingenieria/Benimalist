@@ -6,10 +6,6 @@ main {
 	overflow: hidden;
 }
 
-main .img-container {
-	height: 100vh;
-}
-
 .img-container img {
 	opacity: 0;
 	filter: blur(20px);
