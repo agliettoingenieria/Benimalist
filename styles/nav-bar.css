@@ -11,10 +11,6 @@
 }
 
 @supports (backdrop-filter: blur()) {
-	.nav-bar {
-		backdrop-filter: blur(var(--blur, 5px));
-	}
-
 	@media only screen and (max-width: 775px) {
 		.links_list__list::before {
 			backdrop-filter: blur(var(--blur, 5px));
@@ -23,10 +19,6 @@
 }
 
 @supports not (backdrop-filter: blur()) {
-	.nav-bar {
-		backdrop-filter: blur(var(--blur, 5px));
-	}
-
 	@media only screen and (max-width: 775px) {
 		.links_list__list::before {
 			backdrop-filter: blur(var(--blur, 5px));
