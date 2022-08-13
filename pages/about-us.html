@@ -10,28 +10,29 @@
 	<script type="module" src="/scripts/settings.js"></script>
 	<script type="module" src="/scripts/nav_bar.js"></script>
 	<script type="module" src="/scripts/about_us.js"></script>
-	<title>Document</title>
+	<title>BeNimalist. Sobre nosotros.</title>
 </head>
 
 <body>
 	<nav class="nav-bar container pt-1 pb-1 plr-2">
 		<ul class="nav-bar__menu grid">
 			<li class="menu__logo">
-				<a href="/pages/home.html">
+				<a href="/pages/home.html" tabindex="1">
 					<img src="/assets/images/001-.jpg" alt="Logo">
 				</a>
 			</li>
 			<li class="menu__links_list">
-				<button class="icon icon-burger" id="menu_btn"><img src="/assets/icons/menu-burger-open.png"
+				<button class="icon icon-burger" id="menu_btn" tabindex="1"><img src="/assets/icons/menu-burger-open.png"
 						alt="Open Menu" /></button>
 				<ul class="links_list__list flex gap-3 txt-light">
-					<li class="list__item"><a class="p-1 txt-middle" href="/pages/about_us.html">Nosotros</a></li>
-					<li class="list__item"><a class="p-1 txt-middle" href="#">Galeria</a></li>
-					<li class="list__item"><a class="p-1 txt-middle" href="#">Contactanos</a></li>
+					<li class="list__item"><a class="p-1 txt-middle" tabindex="2" href="about-us.html">Nosotros</a></li>
+					<li class="list__item"><a class="p-1 txt-middle" tabindex="3" href="#">Galeria</a></li>
+					<li class="list__item"><a class="p-1 txt-middle" tabindex="4" href="#">Contactanos</a></li>
 				</ul>
 			</li>
 			<li class="menu__theme icon w-full">
-				<button id="theme_btn" class="icon__button"><img src="/assets/icons/Sun_Icon.svg" alt=""></button>
+				<button id="theme_btn" class="icon__button"><img src="/assets/icons/Sun_Icon.svg"
+						alt="Icono cambio de tema"></button>
 			</li>
 		</ul>
 	</nav>
@@ -43,14 +44,15 @@
 			</div>
 		</main>
 		<section class="about_us content m-auto mt-2">
-			<h2 class="txt-middle fs-main">
-				Sobre Nosotros
-			</h2>
+			<h1 class="txt-middle fs-ultra">
+				Sobre nosotros.
+			</h1>
 			<article>
+				<h2 class="pl-3 fs-main fw-normal">¿Quienes Somos?</h2>
 				<div class="about_us__description">
 					<span class="border" data-desc-decorator></span>
-					<p>
-						Somos BeNemalist
+					<p class="fs-normal2 fw-normal">
+						<strong>BeNimalist</strong> es una
 					</p>
 				</div>
 				<div class="container video txt-middle"></div>
