@@ -1,5 +1,5 @@
-@import "./styles/normalize.css";
-@import "./styles/utils.css";
+@import "normalize.css";
+@import "utils.css";
 
 .bg-light .nav-bar {
 	background-color: #464d5a;
