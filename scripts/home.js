@@ -10,7 +10,7 @@ image.addEventListener("load", (_) => {
 	image.setAttribute("decoding", "sync");
 	image.setAttribute("loading", "eager");
 });
-image.src = "/assets/images/EXTERIOR_48 - Foto 2.jpg";
+image.src = "../assets/images/EXTERIOR_48 - Foto 2.jpg";
 function blurry() {
 	load++;
 	if (load > 99) clearInterval(interval);
