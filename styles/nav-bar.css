@@ -41,7 +41,7 @@
 	align-items: center;
 }
 
-.nav-bar__menu li:not(.menu__logo) {
+.nav-bar__menu > li:not(.menu__logo) {
 	width: 100%;
 }
 
@@ -137,11 +137,9 @@
 		transition: background-color 0.2s ease;
 	}
 
-	.links_list__list .list__item,
-	.links_list__list .list__item a {
+	.links_list__list .list__item {
 		width: 80%;
 	}
-
 	.links_list__list .list__item a {
 		text-align: center;
 	}
