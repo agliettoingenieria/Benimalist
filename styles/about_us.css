@@ -40,6 +40,10 @@ main {
 	margin-top: 2rem;
 }
 
+article .container {
+	margin-bottom: 2rem;
+}
+
 .about_us__description {
 	position: relative;
 	margin-top: 1rem;
@@ -73,5 +77,5 @@ main {
 }
 
 .video iframe {
-	height: 55vmin
+	height: 55vmin;
 }
