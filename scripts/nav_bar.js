@@ -6,7 +6,7 @@ const aElements = linksList.querySelectorAll(".list__item a");
 const themeBtn = $("#theme_btn");
 const nav = $(".nav-bar");
 
-if (JSON.parse(window.localStorage.getItem("settings"))?.theme === "bg-dark") {
+if (document.body.getAttribute("class") === "bg-dark") {
 	themeBtn.children[0].setAttribute("src", "/assets/icons/Moon_Icon.svg");
 } else {
 	themeBtn.children[0].setAttribute("src", "/assets/icons/Sun_Icon.svg");
