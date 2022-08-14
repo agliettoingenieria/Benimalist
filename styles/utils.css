@@ -14,10 +14,9 @@
 		"Open Sans", "Helvetica Neue", sans-serif;
 
 	/* Font Size */
-	--fs-normal: clamp(1rem, 2.7vmin, 5rem);
-	--fs-normal2: 1.25rem;
-	--fs-main: 2rem;
-	--fs-ultra: 2.75rem;
+	--fs-normal: clamp(1rem, 2vw, 3rem);
+	--fs-title: clamp(2rem, 6vw, 7rem);
+	--fs-sub-title: clamp(1.5rem, 3vw, 5rem);
 
 	/* Font Weight */
 	--fw-normal: 400;
@@ -28,7 +27,7 @@
 	--p-2: calc(var(--p-1) * 2);
 	--p-3: calc(var(--p-1) * 3);
 
-	--gap-1: .5vw;
+	--gap-1: 0.5vw;
 	--gap-2: calc(var(--gap-1) * 2);
 	--gap-3: calc(var(--gap-1) * 3);
 
@@ -69,12 +68,12 @@
 	font-size: var(--fs-normal);
 }
 
-.fs-normal2 {
-	font-size: var(--fs-normal2);
+.fs-title {
+	font-size: var(--fs-title);
 }
 
-.fs-main {
-	font-size: var(--fs-main);
+.fs-sub-title {
+	font-size: var(--fs-sub-title);
 }
 
 .fs-ultra {
