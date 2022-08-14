@@ -10,10 +10,3 @@ main {
 	opacity: 0;
 	filter: blur(20px);
 }
-
-.main__whatsapp {
-	position: absolute;
-	bottom: 2%;
-	right: 2%;
-	z-index: 3;
-}

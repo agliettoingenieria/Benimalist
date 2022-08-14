@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/styles/gallery.css">
 	<link rel="stylesheet" href="/styles/nav-bar.css">
+	<link rel="stylesheet" href="/styles/whatsapp.css">
 	<script type="module" src="/scripts/settings.js"></script>
 	<script type="module" src="/scripts/nav_bar.js"></script>
 	<script type="module" src="/scripts/gallery.js"></script>
@@ -14,8 +15,8 @@
 </head>
 
 <body>
-	<nav class="nav-bar container pt-1 pb-1 plr-2">
-		<ul class="nav-bar__menu grid">
+	<nav class="nav-bar blur container flex pt-1 pb-1 plr-2">
+		<ul class="nav-bar__menu grid full-w">
 			<li class="menu__logo">
 				<a href="/" tabindex="1">
 					<img src="/assets/images/001-.jpg" alt="Logo">
@@ -30,7 +31,7 @@
 					<li class="list__item"><a class="p-1 txt-middle" tabindex="4" href="#">Contactanos</a></li>
 				</ul>
 			</li>
-			<li class="menu__theme icon w-full">
+			<li class="menu__theme w-full">
 				<button id="theme_btn" class="icon__button"><img src="/assets/icons/Sun_Icon.svg"
 						alt="Icono cambio de tema"></button>
 			</li>
@@ -58,7 +59,16 @@
 				</article>
 			</section>
 		</div>
-	</main>
+		<span class="socials_container">
+			<ul class="socials__container_list">
+				<li class="icon">
+					<a href="https://wa.me/5493492613175" target="__blank"
+					><img src="/assets/icons/whatsapp_logo-2x.png" alt="Whatsapp"
+					/></a>
+				</li>
+			</ul>
+		  </span>
+		</main>
 
 </body>
 

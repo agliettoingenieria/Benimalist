@@ -10,12 +10,12 @@
 }
 
 main {
-	height: 15.75rem;
+	height: 25.75rem;
 }
 
 .img-container,
 .content {
-	width: 75%;
+	width: 55vw;
 }
 .img-container {
 	position: relative;
@@ -67,7 +67,11 @@ main {
 
 .video {
 	padding: 2rem 0;
-	max-width: 480px;
-	height: 360px;
+	max-width: 75%;
+	min-height: 100vh;
 	margin: auto;
+}
+
+.video iframe {
+	height: 55vmin
 }
