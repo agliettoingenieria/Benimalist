@@ -8,7 +8,13 @@ body,
 	box-sizing: border-box;
 }
 
+html {
+	height: 100%;
+}
+
 body {
+	visibility: hidden;
+	opacity: 0;
 	font-family: var(
 		--ff-normal,
 		serif,
@@ -28,7 +34,6 @@ body {
 	);
 	font-size: var(--fs-normal);
 	font-weight: var(--fw-normal);
-	overflow-x: hidden;
 	min-height: 100vh;
 	transition: background-color 0.2s ease-in-out;
 }

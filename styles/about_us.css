@@ -72,10 +72,18 @@ article .container {
 .video {
 	padding: 2rem 0;
 	max-width: 75%;
-	min-height: 100vh;
 	margin: auto;
 }
 
 .video iframe {
 	height: 55vmin;
+}
+
+@media screen and (max-width: 830px) {
+	.img-container {
+		width: 90%;
+	}
+	.img-container img {
+		object-fit: cover;
+	}
 }
