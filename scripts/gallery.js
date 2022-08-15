@@ -4,7 +4,7 @@ const gallery = $(".gallery-container");
 
 const observerOptions = {
 	root: null,
-	rootMargin: "-80px",
+	rootMargin: "-20px",
 };
 
 function intersectingCallback(entries) {
