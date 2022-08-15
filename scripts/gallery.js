@@ -6,7 +6,6 @@ const observerOptions = {
 	root: null,
 	rootMargin: "-80px",
 };
-threshold: "1.0";
 
 function intersectingCallback(entries) {
 	for (const entry of entries) {
