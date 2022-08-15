@@ -9,6 +9,11 @@ main {
 	height: 25.75rem;
 }
 
+p > a {
+	display: inline;
+	text-decoration: underline;
+}
+
 .img-container,
 .content {
 	width: 55vw;
