@@ -88,7 +88,7 @@
 		gap: 1rem;
 	}
 
-	.icon-burger {
+	button.icon-burger {
 		display: inline-block;
 		cursor: pointer;
 		position: relative;

@@ -36,6 +36,26 @@ body {
 	font-weight: var(--fw-normal);
 	min-height: 100vh;
 	transition: background-color 0.2s ease-in-out;
+	overflow: overlay;
+}
+
+* {
+	scrollbar-width: 10px;
+	scrollbar-color: #e484ff8c transparent;
+}
+
+*::-webkit-scrollbar {
+	width: 10px;
+	z-index: -1;
+}
+
+*::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #528cf88c;
+	border-radius: 10px;
 }
 
 ul {
