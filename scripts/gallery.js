@@ -24,8 +24,9 @@ const lastImageObserver = new IntersectionObserver(
 		if (!entry.isIntersecting) return;
 		lastImageObserver.unobserve(entry.target);
 		if (gallery_json.images.data.length !== lastImageObserved) loadNewCards();
-		console.log("oberving again");
-		lastImageObserver.observe($(".img-container:last-child"));
+		if (lastImageObserved !== gallery_json.images.data.length - 1) {
+			lastImageObserver.observe($(".img-container:last-child"));
+		}
 	},
 	{
 		rootMargin: "-100px",
