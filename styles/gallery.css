@@ -5,6 +5,10 @@ main {
 	padding-top: 120px;
 }
 
+.gallery-container {
+	padding-bottom: 4rem;
+}
+
 .title {
 	margin-bottom: 3rem;
 	padding: 1rem 0;
