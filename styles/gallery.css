@@ -32,3 +32,9 @@ main {
 	opacity: 1;
 	left: 0px;
 }
+
+@media only screen and (min-width: 1024px) {
+	.gallery-container {
+		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	}
+}
