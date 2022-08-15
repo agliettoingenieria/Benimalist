@@ -1,12 +1,8 @@
 @import "normalize.css";
 @import "utils.css";
 
-.bg-light .nav-bar {
-	background-color: #464d5a;
-}
-
 #app {
-	padding-top: var(--nav-height);
+	padding-top: calc(var(--nav-height) + 20px);
 }
 
 main {
@@ -19,8 +15,7 @@ main {
 }
 .img-container {
 	position: relative;
-	border-bottom-left-radius: 0.375rem;
-	border-bottom-right-radius: 0.375rem;
+	border-radius: 0.375rem;
 	overflow: hidden;
 }
 .img-container img {
