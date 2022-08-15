@@ -9,7 +9,11 @@ const observerOptions = {
 };
 
 function intersectingCallback(entries) {
-	for (const entry of entries) {
+	for (const [idx, entry] of entries.entries()) {
+		entry.target.addEventListener("transitionend", ({ target }) => {
+			target.style.transitionDelay = "0s";
+		});
+		entry.target.style.transitionDelay = `${(idx + 3) / 10}s`;
 		entry.target.classList.toggle("show", entry.isIntersecting);
 	}
 }
@@ -44,6 +48,12 @@ function loadNewCards() {
 		const newCard = document.createElement("article");
 		newCard.setAttribute("class", "img-container");
 		const newImage = new Image();
+		newImage.loading = "lazy";
+		newImage.decoding = "async";
+		newImage.addEventListener("load", (e) => {
+			e.target.classList.add("loaded");
+			gallery.classList.add("show");
+		});
 		newImage.src = images.data[i].dir;
 		newCard.appendChild(newImage);
 		intersectionObserver.observe(newCard);
@@ -56,7 +66,6 @@ function loadNewCards() {
 if (cards.length === 0) {
 	loadNewCards();
 	const lastCard = $(".img-container:last-child");
-	console.log(lastCard);
 	lastImageObserver.observe(lastCard);
 	for (const card of cards) {
 		intersectionObserver.observe(card);
