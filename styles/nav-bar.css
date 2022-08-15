@@ -44,7 +44,8 @@
 	width: 100%;
 }
 
-.menu__logo, .menu__theme {
+.menu__logo,
+.menu__theme {
 	width: calc(var(--nav-logo-dimensions) - 1vmin);
 	height: calc(var(--nav-logo-dimensions) - 1vmin);
 	border-radius: 50%;
