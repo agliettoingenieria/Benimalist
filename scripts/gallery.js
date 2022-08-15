@@ -1,6 +1,8 @@
 import { $, $$ } from "./utils.js";
 import gallery_json from "./images.json" assert { type: "json" };
 let lastImageObserved = 0;
+let imagesPerRequest = 5;
+
 const gallery = $(".gallery-container");
 
 const observerOptions = {
@@ -13,7 +15,7 @@ function intersectingCallback(entries) {
 		entry.target.addEventListener("transitionend", ({ target }) => {
 			target.style.transitionDelay = "0s";
 		});
-		entry.target.style.transitionDelay = `${(idx + 3) / 10}s`;
+		entry.target.style.transitionDelay = `${(idx + 1) / 10}s`;
 		entry.target.classList.toggle("show", entry.isIntersecting);
 	}
 }
@@ -27,10 +29,12 @@ const lastImageObserver = new IntersectionObserver(
 	([entry]) => {
 		if (!entry.isIntersecting) return;
 		lastImageObserver.unobserve(entry.target);
-		if (gallery_json.images.data.length !== lastImageObserved) loadNewCards();
-		if (lastImageObserved !== gallery_json.images.data.length - 1) {
-			lastImageObserver.observe($(".img-container:last-child"));
-		}
+		setTimeout(() => {
+			if (gallery_json.images.data.length !== lastImageObserved) loadNewCards();
+			if (lastImageObserved !== gallery_json.images.data.length - 1) {
+				lastImageObserver.observe($(".img-container:last-child"));
+			}
+		}, 400);
 	},
 	{
 		rootMargin: "-100px",
@@ -44,7 +48,8 @@ const normalizeImageURL = ({ dir, name, ext }) => dir + name + "." + ext;
 function loadNewCards() {
 	const { images, ext, abs_dir } = gallery_json;
 	const nodes = [];
-	for (let i = lastImageObserved; i < images.data.length - 1; i++) {
+	for (let i = 0; i < imagesPerRequest; i++) {
+		if (lastImageObserved >= gallery_json.images.data.length - 1) break;
 		const newCard = document.createElement("article");
 		newCard.setAttribute("class", "img-container");
 		const newImage = new Image();
@@ -54,7 +59,7 @@ function loadNewCards() {
 			e.target.classList.add("loaded");
 			gallery.classList.add("show");
 		});
-		newImage.src = images.data[i].dir;
+		newImage.src = images.data[lastImageObserved].dir;
 		newCard.appendChild(newImage);
 		intersectionObserver.observe(newCard);
 		nodes.push(newCard);
