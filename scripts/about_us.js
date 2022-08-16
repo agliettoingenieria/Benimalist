@@ -19,10 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		([target]) => {
 			if (target.isIntersecting) {
 				video.innerHTML = `
-		<iframe src="https://www.youtube.com/embed/8mHNYJVrp8Q" title="YouTube video player" frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen></iframe>
-		`;
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/Wd6h2hbNfGk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>		`;
 			}
 		},
 		{

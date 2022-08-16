@@ -1,12 +1,10 @@
-@import "./utils.css";
-@import "./normalize.css";
-
 main {
 	padding-top: 120px;
 }
 
 .gallery-container {
-	padding-bottom: 4rem;
+	padding-bottom: 4%;
+	overflow: hidden;
 }
 
 .title {
@@ -25,11 +23,20 @@ main {
 .img-container {
 	position: relative;
 	opacity: 0;
-	left: -5px;
 	margin: 0 auto;
+	border: 2px solid #3c3c3c;
 	border-radius: 0.375rem;
+	transform: translateX(-50px);
 	overflow: hidden;
-	transition: opacity 0.6s ease, left 0.6s ease;
+	transition: 150ms;
+	width: 100%;
+	max-height: 200px;
+	height: 200px;
+}
+
+.img-container.show {
+	transform: translateX(0);
+	opacity: 1;
 }
 
 @media only screen and (min-width: 1024px) {

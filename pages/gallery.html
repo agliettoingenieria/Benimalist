@@ -9,14 +9,330 @@
 		content="benimalist, casas, casas tecnicas, mute, simplicidad, eficiencia, ecologia, home, ingenieria, prefabricado, minimalista, simple, sencillo, sustentable, arquitectura, madera" />
 	<meta name="description"
 		content="Visita nuestra galería y mira como queda el producto final de una casa MINIMALISTA." />
-	<script type="module" src="/scripts/settings.js"></script>
-	<link rel="stylesheet" href="/styles/gallery.css">
+	<title>BeNimalist - Galería</title>
+	<script type="module" src="/scripts/settings.js" defer></script>
+	<style>
+		:root {
+			/* Bg Color */
+			--bg-dark: #1f1d1d;
+			--bg-light: #ffffff;
+
+			/* Text Color */
+			--txt-dark: #000000;
+			--txt-light: #ffffff;
+			--txt-gray: #2c2424b2;
+
+			/* Font Family */
+			--ff-normal: serif, sans-serif, Arial, Helvetica, -apple-system,
+				BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+				"Open Sans", "Helvetica Neue", sans-serif;
+
+			/* Font Size */
+			--fs-normal: clamp(1rem, 2vw, 3rem);
+			--fs-title: clamp(2rem, 200%, 7rem);
+			--fs-sub-title: clamp(1.5rem, 3vw, 5rem);
+
+			/* Font Weight */
+			--fw-normal: 400;
+			--fw-bold: bold;
+
+			/* Paddings */
+			--p-1: 0.5rem;
+			--p-2: calc(var(--p-1) * 2);
+			--p-3: calc(var(--p-1) * 3);
+
+			--gap-1: 0.5vw;
+			--gap-2: calc(var(--gap-1) * 2);
+			--gap-3: calc(var(--gap-1) * 3);
+
+			/* Others */
+			--blur: 5px;
+			--full-w: 100vw;
+			--full-h: 100vh;
+			--nav-height: clamp(80px, 8vw, 9vmin);
+		}
+
+		.bg-dark {
+			background: linear-gradient(90deg, #131313, #080e37b7, #131313);
+			color: var(--txt-light);
+		}
+
+		.bg-light {
+			background-color: var(--bg-light);
+			color: var(--txt-dark);
+		}
+
+		.txt-dark {
+			color: var(--txt-dark);
+		}
+
+		.txt-light {
+			color: var(--txt-light);
+		}
+
+		.txt-gray {
+			color: var(--txt-gray);
+		}
+
+		.ff-normal {
+			font-family: var(--ff-normal);
+		}
+
+		.fs-normal {
+			font-size: var(--fs-normal);
+		}
+
+		.fs-title {
+			font-size: var(--fs-title);
+		}
+
+		.fs-sub-title {
+			font-size: var(--fs-sub-title);
+		}
+
+		.fs-ultra {
+			font-size: var(--fs-ultra);
+		}
+
+		.fw-normal {
+			font-weight: var(--fw-normal);
+		}
+
+		.fw-bold {
+			font-weight: var(--fw-bold);
+		}
+
+		.container {
+			width: 100%;
+			height: 100%;
+		}
+
+		.flex {
+			display: flex;
+		}
+
+		.grid {
+			display: grid;
+		}
+
+		@supports (backdrop-filter: blur()) {
+			.blur {
+				backdrop-filter: blur(var(--blur, 5px));
+			}
+		}
+
+		.icon {
+			width: 30px;
+			height: 30px;
+		}
+
+		.full-w {
+			width: var(--full-w);
+		}
+
+		.full-h {
+			height: var(--full-h);
+		}
+
+		.p-1 {
+			padding: var(--p-1);
+		}
+
+		.p-2 {
+			padding: var(--p-2);
+		}
+
+		.p-3 {
+			padding: var(--p-3);
+		}
+
+		.pl-1 {
+			padding-left: var(--p-1);
+		}
+
+		.pl-2 {
+			padding-left: var(--p-2);
+		}
+
+		.pl-3 {
+			padding-left: var(--p-3);
+		}
+
+		.pt-1 {
+			padding-top: var(--p-1);
+		}
+
+		.pt-2 {
+			padding-top: var(--p-2);
+		}
+
+		.pt-3 {
+			padding-top: var(--p-3);
+		}
+
+		.pr-1 {
+			padding-right: var(--p-1);
+		}
+
+		.pr-2 {
+			padding-right: var(--p-2);
+		}
+
+		.pr-3 {
+			padding-right: var(--p-3);
+		}
+
+		.pb-1 {
+			padding-bottom: var(--p-1);
+		}
+
+		.pb-2 {
+			padding-bottom: var(--p-2);
+		}
+
+		.pb-3 {
+			padding-bottom: var(--p-3);
+		}
+
+		.plr-1 {
+			padding-left: var(--p-1);
+			padding-right: var(--p-1);
+		}
+
+		.plr-2 {
+			padding-left: var(--p-2);
+			padding-right: var(--p-2);
+		}
+
+		.plr-2 {
+			padding-left: var(--p-3);
+			padding-right: var(--p-3);
+		}
+
+		.m-auto {
+			margin: auto;
+		}
+
+		.gap-1 {
+			gap: var(--gap-1);
+		}
+
+		.gap-2 {
+			gap: var(--gap-2);
+		}
+
+		.gap-3 {
+			gap: var(--gap-3);
+		}
+
+		.txt-middle {
+			text-align: center;
+		}
+	</style>
+
+	<style>
+		@font-face {
+			font-family: "adammedium";
+			src: url('/assets/fonts/Adam-Medium.ttf');
+		}
+
+		html,
+		body,
+		*,
+		*::after,
+		*::before {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		html {
+			height: 100%;
+		}
+
+		body {
+			visibility: hidden;
+			opacity: 0;
+			font-family: "adammedium",
+				serif,
+				sans-serif,
+				Arial,
+				Helvetica,
+				-apple-system,
+				BlinkMacSystemFont,
+				"Segoe UI",
+				Roboto,
+				Oxygen,
+				Ubuntu,
+				Cantarell,
+				"Open Sans",
+				"Helvetica Neue",
+				sans-serif;
+			font-size: var(--fs-normal);
+			font-weight: var(--fw-normal);
+			min-height: 100vh;
+			transition: background-color 0.2s ease-in-out;
+			overflow: overlay;
+		}
+
+		* {
+			scrollbar-width: 10px;
+			scrollbar-color: #e484ff8c transparent;
+		}
+
+		*::-webkit-scrollbar {
+			width: 10px;
+			z-index: -1;
+		}
+
+		*::-webkit-scrollbar-track {
+			background-color: transparent;
+		}
+
+		*::-webkit-scrollbar-thumb {
+			background-color: #528cf88c;
+			border-radius: 10px;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		a {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+		}
+
+		a,
+		a:visited,
+		a:active {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		button {
+			border: none;
+			outline: none;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		iframe {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="/styles/gallery.css">
 	<link rel="stylesheet" href="/styles/nav-bar.css">
 	<link rel="stylesheet" href="/styles/socials.css">
-	<script type="module" src="/scripts/nav_bar.js"></script>
-	<script type="module" src="/scripts/gallery.js"></script>
-	<script type="module" src="/scripts/socials.js"></script>
-	<title>BeNimalist - Galería</title>
+	<script type="module" src="/scripts/nav_bar.js" defer></script>
+	<script type="module" src="/scripts/socials.js" async></script>
+	<script type="module" src="/scripts/gallery.js" async></script>
 	<link rel="apple-touch-icon" href="/assets/icons/apple-tocuh-icon.png" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
@@ -27,22 +343,29 @@
 	<nav class="nav-bar blur container flex pt-1 pb-1 plr-2">
 		<ul class="nav-bar__menu grid full-w">
 			<li class="menu__logo">
-				<a href="/" tabindex="1">
-					<img src="/assets/images/001-.jpg" alt="Logo">
+				<a title="Ir a Inicio" href="/" tabindex="1">
+					<img src="/assets/images/001-.jpg" alt="Logo" />
 				</a>
 			</li>
 			<li class="menu__links_list">
-				<button class="icon icon-burger" id="menu_btn" tabindex="1"><img src="/assets/icons/menu-burger-open.png"
-						alt="Open Menu" /></button>
+				<button class="icon icon-burger" id="menu_btn" tabindex="1">
+					<img src="/assets/icons/menu-burger-open.png" alt="Open Menu" />
+				</button>
 				<ul class="links_list__list flex gap-3 txt-light">
-					<li class="list__item"><a class="p-1 txt-middle" tabindex="2" href="/pages/about-us.html">Nosotros</a></li>
-					<li class="list__item"><a class="p-1 txt-middle" tabindex="3" href="/pages/gallery.html">Galeria</a></li>
-					<li class="list__item"><a class="p-1 txt-middle" tabindex="4" href="/pages/catalogue.html">Catálogos</a></li>
+					<li class="list__item">
+						<a title="Ir a Nosotros" class="p-1 txt-middle" tabindex="2" href="/pages/about-us.html">Nosotros</a>
+					</li>
+					<li class="list__item">
+						<a title="Ir a Galería" class="p-1 txt-middle" tabindex="3" href="/pages/gallery.html">Galeria</a>
+					</li>
+					<li class="list__item"><a title="Ir a Catálogos" class="p-1 txt-middle" tabindex="4"
+							href="/pages/catalogue.html">Catálogos</a></li>
 				</ul>
 			</li>
 			<li class="menu__theme w-full">
-				<button id="theme_btn" class="icon__button"><img src="/assets/icons/Sun_Icon.svg"
-						alt="Icono cambio de tema"></button>
+				<button id="theme_btn" class="icon__button">
+					<img src="/assets/icons/Sun_Icon.svg" alt="Icono cambio de tema" />
+				</button>
 			</li>
 		</ul>
 	</nav>
@@ -62,10 +385,6 @@
 				<li class="icon">
 					<a href="https://www.instagram.com/benimalist/" title="BeNimalist Instagram" target="__blank"><img
 							src="/assets/icons/instagram.png" alt="Benimalist Instagram Icon" /></a>
-				</li>
-				<li class="icon">
-					<a href="https://www.instagram.com/mute.estudio/" title="Mute Studio Instagram" target="__blank"><img
-							src="/assets/icons/instagram.png" alt="Mute Studio Instagram Icon" /></a>
 				</li>
 				<li class="icon">
 					<a href="https://www.youtube.com/channel/UCYeUi2TvRyr6EW4X2M4yE9Q" title="BeNimalist Youtube"
