@@ -6,13 +6,18 @@
 
 - ### [/assets](/assets/)
   - ### [/images](/assets/images/)
+  - ### [/icons](/assets/icons/)
+  - ### [/documents](/assets/documents/)
 - ### [/pages](/pages/)
 - ### [/styles](/styles/)
 - ### [/scripts](/scripts/)
 
 ## [Paginas](/pages/)
 
-- ### [home.html](/pages/home.html)
+- ### [index.html](/index.html)
+- ### [about-us.html](/pages/about-us.html)
+- ### [gallery.html](/pages/gallery.html)
+- ### [catalogue.html](/pages/catalogue.html)
 
 ## Tecnologías
 
