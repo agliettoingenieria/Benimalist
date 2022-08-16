@@ -43,10 +43,8 @@ const lastImageObserver = new IntersectionObserver(
 
 const cards = $$(".img-container");
 
-const normalizeImageURL = ({ dir, name, ext }) => dir + name + "." + ext;
-
 function loadNewCards() {
-	const { images, ext, abs_dir } = gallery_json;
+	const { images } = gallery_json;
 	const nodes = [];
 	for (let i = 0; i < imagesPerRequest; i++) {
 		if (lastImageObserved >= gallery_json.images.data.length - 1) break;
