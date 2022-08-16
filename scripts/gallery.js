@@ -1,16 +1,13 @@
-import { $, $$ } from "./utils.js";
+import { $, $$, Observer, timeout } from "./utils.js";
 import gallery_json from "./images.json" assert { type: "json" };
 let lastImageObserved = 0;
 let imagesPerRequest = 5;
 
+let galleryObserver, lastCardObserver;
+
 const gallery = $(".gallery-container");
 
-const observerOptions = {
-	root: null,
-	rootMargin: "-20px",
-};
-
-function intersectingCallback(entries) {
+function galleryObserverCallback(entries) {
 	for (const [idx, entry] of entries.entries()) {
 		entry.target.addEventListener("transitionend", ({ target }) => {
 			target.style.transitionDelay = "0s";
@@ -20,28 +17,16 @@ function intersectingCallback(entries) {
 	}
 }
 
-const intersectionObserver = new IntersectionObserver(
-	intersectingCallback,
-	observerOptions
-);
-
-const lastImageObserver = new IntersectionObserver(
-	([entry]) => {
-		if (!entry.isIntersecting) return;
-		lastImageObserver.unobserve(entry.target);
-		setTimeout(() => {
-			if (gallery_json.images.data.length !== lastImageObserved) loadNewCards();
-			if (lastImageObserved !== gallery_json.images.data.length - 1) {
-				lastImageObserver.observe($(".img-container:last-child"));
-			}
-		}, 400);
-	},
-	{
-		rootMargin: "-100px",
-	}
-);
-
-const cards = $$(".img-container");
+function lastCardObserverCallback([entry]) {
+	if (!entry.isIntersecting) return;
+	lastCardObserver.unobserve(entry.target);
+	timeout(() => {
+		if (gallery_json.images.data.length !== lastImageObserved) loadNewCards();
+		if (lastImageObserved !== gallery_json.images.data.length - 1) {
+			lastCardObserver.observe($(".img-container:last-child"));
+		}
+	}, 400);
+}
 
 function loadNewCards() {
 	const { images } = gallery_json;
@@ -54,23 +39,33 @@ function loadNewCards() {
 		newImage.loading = "lazy";
 		newImage.decoding = "async";
 		newImage.addEventListener("load", (e) => {
-			e.target.classList.add("loaded");
-			gallery.classList.add("show");
+			newCard.style.opacity = 1;
+			newCard.style.left = 0;
 		});
 		newImage.src = images.data[lastImageObserved].dir;
 		newCard.appendChild(newImage);
-		intersectionObserver.observe(newCard);
+		galleryObserver.observe(newCard);
 		nodes.push(newCard);
 		lastImageObserved++;
 	}
 	gallery.append(...nodes);
 }
 
-if (cards.length === 0) {
-	loadNewCards();
-	const lastCard = $(".img-container:last-child");
-	lastImageObserver.observe(lastCard);
-	for (const card of cards) {
-		intersectionObserver.observe(card);
-	}
+const cards = $$(".img-container");
+const observerOptions = {
+	root: null,
+	rootMargin: "-20px",
+};
+
+galleryObserver = Observer(null, galleryObserverCallback, observerOptions);
+loadNewCards();
+const lastCard = $(".img-container:last-child");
+lastCardObserver = Observer(
+	lastCard,
+	lastCardObserverCallback,
+	observerOptions
+);
+lastCardObserver.observe();
+for (const card of cards) {
+	galleryObserver.observe(card);
 }
