@@ -1,27 +1,19 @@
 import { $, $$ } from "./utils.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
 	const video = $(".video");
-	const socials = $$(".socials__container_list .icon");
 	const decorators = $$("[data-desc-decorator]");
 	const descriptions = $$(".about_us__description > p");
 
 	for (const decorator of decorators) {
 		decorator.style.opacity = 1;
 	}
-	console.log(socials);
 	setTimeout(() => {
 		for (const description of descriptions) {
 			description.style.opacity = 1;
 			description.style.left = "12px";
 		}
-		console.log(socials);
-		for (const [idx, social] of socials.entries()) {
-			social.style.animationName = "appear";
-			social.style.animationDuration = ".8s";
-			social.style.animationDelay = `${(idx + 0.2) / 10}s`;
-		}
-	}, 300);
+	});
 
 	const intersectionObserver = new IntersectionObserver(
 		([target]) => {
