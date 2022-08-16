@@ -8,21 +8,22 @@
 .socials__container_list .icon {
 	position: relative;
 	margin: 1rem 0;
-	animation-name: appear;
-	animation-duration: 0.8s;
-	animation-timing-function: ease-out;
 }
 
 @keyframes appear {
 	0% {
 		opacity: 0;
+		left: 0;
+	}
+	25% {
+		opacity: 1;
 		left: -30px;
 	}
 	50% {
-		opacity: 1;
 		left: 30px;
 	}
 	100% {
+		opacity: 1;
 		left: 0;
 	}
 }
