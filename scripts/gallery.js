@@ -1,5 +1,6 @@
 import { $, Observer, timeout } from "./utils.js";
 import gallery_json from "./images.js";
+
 let lastImageObserved = 0;
 let imagesPerRequest = 4;
 let lastCardObserver;
