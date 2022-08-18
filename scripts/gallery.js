@@ -1,5 +1,5 @@
-import { $, $$, Observer, timeout } from "./utils.js";
-import gallery_json from "./images.json" assert { type: "json" };
+import { $, $$, Observer } from "./utils.js";
+import gallery_json from "./images.js";
 
 window.addEventListener("load", (e) => {
 	const gallery = $(".gallery-container");
