@@ -35,8 +35,9 @@
 	width: 100%;
 }
 
-.menu__logo,
-.menu__theme {
+
+
+.menu__logo {
 	width: calc(var(--nav-logo-dimensions) - 1vmin);
 	height: calc(var(--nav-logo-dimensions) - 1vmin);
 	border-radius: 50%;
@@ -62,15 +63,37 @@
 	background-color: #1f4a8aa6;
 }
 
+
 .menu__theme {
-	text-align: end;
-	z-index: 3;
+	align-items: flex-end;
 }
 
-.menu__theme #theme_btn {
-	cursor: pointer;
-	background-color: transparent;
-	height: 100%;
+.menu__theme {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#theme_btn {
+	position: relative;
+	z-index: 2;
+	padding-inline: .1rem;
+	border-radius: .375rem;
+	padding-block: .1rem;
+}
+
+.icon {
+	width: 40px;
+	height: 40px;
+	top: 10%;
+}
+
+.icon.moon {
+	color: #401575e3;
+}
+
+.icon.sun {
+	display: none;
+	color: #d4e029e5
 }
 
 @media only screen and (max-width: 775px) {

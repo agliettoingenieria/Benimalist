@@ -7,16 +7,16 @@ const themeBtn = $("#theme_btn");
 const nav = $(".nav-bar");
 
 if (document.body.getAttribute("class") === "bg-dark") {
-	themeBtn.children[0].setAttribute("src", "/assets/icons/Moon_Icon.svg");
+	themeBtn.firstElementChild.style.display = "none";
+	themeBtn.lastElementChild.style.display = "inline-block";
 } else {
-	themeBtn.children[0].setAttribute("src", "/assets/icons/Sun_Icon.svg");
+	themeBtn.firstElementChild.style.display = "inline-block";
+	themeBtn.lastElementChild.style.display = "none";
 }
 
 document.addEventListener("DOMContentLoaded", (_) => {
 	nav.style.opacity = 1;
 	const currentPath = window.location.pathname;
-	console.log(currentPath);
-	console.log();
 	aElements.forEach((el, idx) => {
 		if (el.getAttribute("href") === currentPath) {
 			liElements[idx].style.backgroundColor = "#1c3483db";
@@ -31,7 +31,6 @@ burgerBtn.addEventListener("click", (e) => {
 
 themeBtn.addEventListener("click", (e) => {
 	const bodyElement = document.body;
-	const themeBtnImg = themeBtn.children[0];
 	if (!bodyElement.getAttribute("class")) {
 		bodyElement.classList.add("bg-dark");
 		return;
@@ -40,11 +39,13 @@ themeBtn.addEventListener("click", (e) => {
 	if (bodyElement.getAttribute("class") === "bg-light") {
 		bodyElement.classList.replace("bg-light", "bg-dark");
 		bodyTheme = "bg-dark";
-		themeBtnImg.setAttribute("src", "/assets/icons/Moon_Icon.svg");
+		themeBtn.firstElementChild.style.display = "none";
+		themeBtn.lastElementChild.style.display = "inline-block";
 	} else if (bodyElement.getAttribute("class") === "bg-dark") {
 		bodyElement.classList.replace("bg-dark", "bg-light");
 		bodyTheme = "bg-light";
-		themeBtnImg.setAttribute("src", "/assets/icons/Sun_Icon.svg");
+		themeBtn.firstElementChild.style.display = "inline-block";
+		themeBtn.lastElementChild.style.display = "none";
 	}
 	window.localStorage.setItem("settings", JSON.stringify({ theme: bodyTheme }));
 });
