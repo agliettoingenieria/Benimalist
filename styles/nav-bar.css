@@ -19,18 +19,16 @@
 	--nav-bg: #1b2136;
 }
 
-@supports (backdrop-filter: blur()) {
-	@media only screen and (max-width: 775px) {
-		.links_list__list::before {
-			backdrop-filter: blur(var(--blur, 5px));
-		}
+@media only screen and (max-width: 775px) {
+	.links_list__list::before {
+		backdrop-filter: blur(var(--blur, 5px));
 	}
 }
 
 @supports not (backdrop-filter: blur()) {
 	@media only screen and (max-width: 775px) {
 		.links_list__list::before {
-			backdrop-filter: blur(var(--blur, 5px));
+			background-color: #000000b2;
 		}
 	}
 }
