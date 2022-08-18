@@ -13,25 +13,16 @@
 	opacity: 0;
 	z-index: 1;
 	transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	backdrop-filter: blur(var(--blur, 5px));
 }
 
 .bg-dark .nav-bar {
 	--nav-bg: #1b2136;
 }
 
-@supports (backdrop-filter: blur()) {
-	@media only screen and (max-width: 775px) {
-		.links_list__list::before {
-			backdrop-filter: blur(var(--blur, 5px));
-		}
-	}
-}
-
 @supports not (backdrop-filter: blur()) {
-	@media only screen and (max-width: 775px) {
 		.links_list__list::before {
-			backdrop-filter: blur(var(--blur, 5px));
-		}
+			background-color: var(--nav-bg);
 	}
 }
 
