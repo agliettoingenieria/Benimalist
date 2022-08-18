@@ -24,18 +24,20 @@ document.addEventListener("DOMContentLoaded", () => {
 	}, 300);
 
 	const intersectionObserver = new IntersectionObserver(
-		([target]) => {
-			if (target.isIntersecting) {
+		([entry]) => {
+			if (entry.isIntersecting) {
 				video.innerHTML = `
 		<iframe src="https://www.youtube.com/embed/8mHNYJVrp8Q" title="YouTube video player" frameborder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 							allowfullscreen></iframe>
 		`;
+				intersectionObserver.unobserve(entry.target);
 			}
 		},
 		{
 			root: null,
 			rootMargin: "80px",
+			threshold: 0.7,
 		}
 	);
 

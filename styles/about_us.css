@@ -72,11 +72,8 @@ article .container {
 .video {
 	padding: 2rem 0;
 	max-width: 75%;
-	margin: auto;
-}
-
-.video iframe {
 	height: 55vmin;
+	margin: auto;
 }
 
 @media screen and (max-width: 830px) {
