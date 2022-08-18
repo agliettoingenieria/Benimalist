@@ -16,15 +16,21 @@ window.addEventListener("DOMContentLoaded", () => {
 	});
 
 	const intersectionObserver = new IntersectionObserver(
-		([target]) => {
-			if (target.isIntersecting) {
+		([entry]) => {
+			if (entry.isIntersecting) {
 				video.innerHTML = `
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/Wd6h2hbNfGk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>		`;
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/Wd6h2hbNfGk" 
+				title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+				clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+				</iframe>
+				`;
+				intersectionObserver.unobserve(entry.target);
 			}
 		},
 		{
 			root: null,
 			rootMargin: "80px",
+			threshold: 0.7,
 		}
 	);
 
