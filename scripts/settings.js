@@ -10,6 +10,8 @@ function showTheme() {
 function showContent() {
 	document.body.style.visibility = "visible";
 	document.body.style.opacity = "1";
+	$("html");
+	$("html").removeAttribute("style");
 }
 
 showTheme();
