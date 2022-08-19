@@ -232,10 +232,15 @@
 	</style>
 
 	<style>
-		@font-face {
-			font-family: "adammedium";
-			src: url('/assets/fonts/Adam-Medium.ttf');
-		}
+    @font-face {
+      font-family: "adammedium";
+      src: url('/assets/fonts/Adam-Medium.ttf');
+    }
+
+    @font-face {
+      font-family: "Helvetica";
+      src: url('/assets/fonts/Helvetica55Roman.ttf');
+    }
 
 		html,
 		body,
@@ -252,10 +257,8 @@
 		}
 
 		body {
-			visibility: hidden;
-			opacity: 0;
 			font-family:
-				"adammedium",
+				"Helvetica",
 				serif,
 				sans-serif,
 				Arial,
@@ -275,7 +278,9 @@
 			min-height: 100vh;
 			transition: background-color 0.2s ease-in-out;
 			overflow: overlay;
-		}
+			background: linear-gradient(90deg, #131313, #080e37b7, #131313);
+			color: var(--txt-light);
+    	}
 
 		* {
 			scrollbar-width: 10px;
@@ -329,13 +334,12 @@
 			height: 100%;
 		}
 	</style>
-	<script type="module" src="/scripts/settings.js"></script>
 	<link rel="stylesheet" href="/styles/nav-bar.css">
 	<link rel="stylesheet" href="/styles/home.css">
 	<link rel="stylesheet" href="/styles/socials.css">
 	<script type="module" src="/scripts/home.js"></script>
 	<script type="module" src="/scripts/nav_bar.js"></script>
-	<script type="module" src="/scripts/socials.js"></script>
+	<script type="module" src="/scripts/socials.js" defer></script>
 
 	<link rel="apple-touch-icon" href="/assets/icons/apple-tocuh-icon.png" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
@@ -362,34 +366,10 @@
 						<a title="Ir a Galería" class="p-1 txt-middle" tabindex="3" href="/pages/gallery.html">Galeria</a>
 					</li>
 					<li class="list__item"><a title="Ir a Catálogos" class="p-1 txt-middle" tabindex="4"
-							href="/pages/catalogue.html">Catálogos</a></li>
-				</ul>
-			</li>
-			<li class="menu__theme w-full">
-				<button id="theme_btn" class="icon__button">
-					<div class="icon moon">
-						<svg viewBox="0 0 24 24" focusable="false" role="presentation" aria-hidden="true" class="css-1im46kq">
-							<path fill="currentColor"
-								d="M21.4,13.7C20.6,13.9,19.8,14,19,14c-5,0-9-4-9-9c0-0.8,0.1-1.6,0.3-2.4c0.1-0.3,0-0.7-0.3-1 c-0.3-0.3-0.6-0.4-1-0.3C4.3,2.7,1,7.1,1,12c0,6.1,4.9,11,11,11c4.9,0,9.3-3.3,10.6-8.1c0.1-0.3,0-0.7-0.3-1 C22.1,13.7,21.7,13.6,21.4,13.7z">
-							</path>
-						</svg>
-					</div>
-					<div class="icon sun">
-						<svg viewBox="0 0 24 24" focusable="false" role="presentation" class="css-ivr09j">
-							<g stroke-linejoin="full" stroke-linecap="full" stroke-width="2" fill="none" stroke="currentColor">
-								<circle cx="12" cy="12" r="5"></circle>
-								<path d="M12 1v2"></path>
-								<path d="M12 21v2"></path>
-								<path d="M4.22 4.22l1.42 1.42"></path>
-								<path d="M18.36 18.36l1.42 1.42"></path>
-								<path d="M1 12h2"></path>
-								<path d="M21 12h2"></path>
-								<path d="M4.22 19.78l1.42-1.42"></path>
-								<path d="M18.36 5.64l1.42-1.42"></path>
-							</g>
-						</svg>
-					</div>
-				</button>
+						href="/pages/catalogue.html">Catálogos</a></li>
+					<li class="list__item"><a title="Ir a Catálogos" class="p-1 txt-middle" tabindex="4"
+						href="/pages/contacts.html">Contactos</a></li>
+			</ul>
 			</li>
 		</ul>
 	</nav>

@@ -15,9 +15,6 @@
 		content="Visita nuestra galería y mira como queda el producto final de una casa MINIMALISTA." />
 	<style>
 		:root {
-			/* Bg Color */
-			--bg-dark: #1f1d1d;
-
 			/* Text Color */
 			--txt-dark: #000000;
 			--txt-light: #ffffff;
@@ -49,6 +46,11 @@
 			--full-w: 100vw;
 			--full-h: 100vh;
 			--nav-height: clamp(80px, 8vw, 9vmin);
+		}
+
+		.bg-dark {
+			background: linear-gradient(90deg, #131313, #080e37b7, #131313);
+			color: var(--txt-light);
 		}
 
 		.txt-dark {
@@ -245,7 +247,8 @@
 		}
 
 		body {
-			font-family: "Helvetica",
+			font-family:
+				"Helvetica",
 				serif,
 				sans-serif,
 				Arial,
@@ -267,8 +270,7 @@
 			overflow: overlay;
 			background: linear-gradient(90deg, #131313, #080e37b7, #131313);
 			color: var(--txt-light);
-		}
-
+    	}
 		* {
 			scrollbar-width: 10px;
 			scrollbar-color: #e484ff8c transparent;
@@ -326,7 +328,6 @@
 	<link rel="stylesheet" href="/styles/socials.css">
 	<script type="module" src="/scripts/nav_bar.js" defer></script>
 	<script type="module" src="/scripts/socials.js" defer></script>
-	<script type="module" src="/scripts/gallery.js" async></script>
 	<link rel="apple-touch-icon" href="/assets/icons/apple-tocuh-icon.png" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
@@ -364,10 +365,7 @@
 
 
 	<main>
-		<div class="container">
-			<section class="gallery-container container grid m-auto">
-			</section>
-		</div>
+
 		<span class="socials_container">
 			<ul class="socials__container_list">
 				<li class="icon">

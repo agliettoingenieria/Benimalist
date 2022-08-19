@@ -15,7 +15,7 @@ function blurry() {
 	load++;
 	if (load > 99) clearInterval(interval);
 	image.style.opacity = scale(load, 0, 100, 1, 1);
-	image.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
+	image.style.filter = `blur(${scale(load, .8, 30, 20, 0)}px)`;
 }
 function scale(current, in_min, in_max, out_min, out_max) {
 	return (
