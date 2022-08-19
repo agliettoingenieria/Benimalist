@@ -1,0 +1,44 @@
+main {
+    text-align: center;
+}
+iframe {
+    width: 75%;
+    height: 560px;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+.socials__container_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.socials__container_list .icon {
+	opacity: 0.6;
+	scale: 1.5;
+    transition: opacity .2s ease-in-out;
+}
+
+.socials__container_list .icon:hover {
+    opacity: 1;
+}
+
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+		left: 0;
+	}
+	25% {
+		opacity: 1;
+		left: -30%;
+	}
+	50% {
+		left: 30%;
+	}
+	100% {
+		opacity: 1;
+		left: 0;
+	}
+}
