@@ -16,10 +16,6 @@
 	backdrop-filter: blur(var(--blur, 5px));
 }
 
-.bg-dark .nav-bar {
-	--nav-bg: #1b2136;
-}
-
 @supports not (backdrop-filter: blur()) {
 		.links_list__list::before {
 			background-color: var(--nav-bg);
@@ -33,7 +29,7 @@
 
 
 .menu__logo {
-	width: 40%;
+	width: 60%;
 	height: 100px;
 	border-radius: 1rem;
 	overflow: hidden;
@@ -113,5 +109,11 @@
 	}
 	.links_list__list .list__item a {
 		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 775px) {
+	.menu__logo img{
+		object-fit: contain;
 	}
 }
