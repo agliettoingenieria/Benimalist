@@ -1,28 +1,30 @@
 main {
-    text-align: center;
+	text-align: center;
 }
+
 iframe {
-    width: 75%;
-    height: 560px;
-    border-radius: 1rem;
-    margin-block: 2rem 1rem;
+	width: 75%;
+	height: 560px;
+	border-radius: 1rem;
+	margin-block: 2rem 1rem;
 }
+
 .socials__container_list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4rem;
 }
 
 .socials__container_list .icon {
 	min-width: 7vmin;
 	min-height: 7vmin;
 	opacity: 0.6;
-    transition: opacity .2s ease-in-out;
+	transition: opacity .2s ease-in-out;
 }
 
 .socials__container_list .icon:hover {
-    opacity: 1;
+	opacity: 1;
 }
 
 
@@ -31,15 +33,44 @@ iframe {
 		opacity: 0;
 		left: 0;
 	}
+
 	25% {
 		opacity: 1;
 		left: -30%;
 	}
+
 	50% {
 		left: 30%;
 	}
+
 	100% {
 		opacity: 1;
 		left: 0;
 	}
+}
+
+.contacts_footer {
+	background-color: #232323;
+	padding: 2rem;
+}
+
+.contacts_footer ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	gap: 2rem;
+}
+
+.contacts_footer .contact {
+	color: #84c4ff93;
+	font-size: 1rem;
+}
+
+.contacts_footer .contact:hover a {
+	text-decoration: underline !important;
+}
+
+.contacts_footer .contact:last-of-type {
+	color: #b1cae2e0;
 }
