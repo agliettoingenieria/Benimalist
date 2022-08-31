@@ -12,13 +12,14 @@
 	max-height: 120px;
 	opacity: 0;
 	z-index: 1;
+	font-size: clamp(1rem, 2vw, 3rem);
 	transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
 	backdrop-filter: blur(var(--blur, 5px));
 }
 
 @supports not (backdrop-filter: blur()) {
-		.links_list__list::before {
-			background-color: var(--nav-bg);
+	.links_list__list::before {
+		background-color: var(--nav-bg);
 	}
 }
 
@@ -107,13 +108,14 @@
 	.links_list__list .list__item {
 		width: 80%;
 	}
+
 	.links_list__list .list__item a {
 		text-align: center;
 	}
 }
 
 @media only screen and (max-width: 775px) {
-	.menu__logo img{
+	.menu__logo img {
 		object-fit: contain;
 	}
 }
