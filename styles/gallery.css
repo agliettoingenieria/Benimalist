@@ -88,4 +88,5 @@ main {
 	transform: translate(-50%, -50%);
 	width: 75vmax;
 	height: 80vmin;
+	object-fit: contain;
 }
