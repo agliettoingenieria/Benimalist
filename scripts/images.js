@@ -1,72 +1,31 @@
 export default {
 	images: {
 		data: [
-			{
-				dir: "/assets/images/gallery/22 ok.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/33 ok.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/baño.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/ext pantalla cerrada_47 - Foto.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/ext pantalla cerrada_48 - Foto.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/ext pantalla cerrada_49 - Foto.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/ext pantalla cerrada_50 - Foto.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/EXTERIOR 1.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/EXTERIOR 2.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/EXTERIOR 2_49 - Foto.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/exterior 49 cerrado 2.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/exterior pergola_52 - Foto.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/EXTERIOR SIN FUEGO_12.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/EXTERIOR SIN FUEGO_14.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/EXTERIOR_12.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/EXTERIOR_14.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/EXTERIOR_47 - Foto 2.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/EXTERIOR_48 - Foto 2.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/EXTERIOR_49 - Foto 2.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/EXTERIOR_50 - Foto 2.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/EXTERIOR_52 - Foto.jpg",
-			},
-			{
-				dir: "/assets/images/gallery/EXTERIOR_53 - Foto 2.jpg",
-			},
+			{ dir: "/assets/images/gallery/000.jpeg" },
+			{ dir: "/assets/images/gallery/001.jpeg" },
+			{ dir: "/assets/images/gallery/002.jpeg" },
+			{ dir: "/assets/images/gallery/003.jpeg" },
+			{ dir: "/assets/images/gallery/004.jpeg" },
+			{ dir: "/assets/images/gallery/005.jpeg" },
+			{ dir: "/assets/images/gallery/006.jpeg" },
+			{ dir: "/assets/images/gallery/007.jpeg" },
+			{ dir: "/assets/images/gallery/008.jpeg" },
+			{ dir: "/assets/images/gallery/009.jpeg" },
+			{ dir: "/assets/images/gallery/010.jpeg" },
+			{ dir: "/assets/images/gallery/011.jpeg" },
+			{ dir: "/assets/images/gallery/012.jpg" },
+			{ dir: "/assets/images/gallery/013.jpg" },
+			{ dir: "/assets/images/gallery/014.jpg" },
+			{ dir: "/assets/images/gallery/015.jpeg" },
+			{ dir: "/assets/images/gallery/016.jpeg" },
+			{ dir: "/assets/images/gallery/017.jpg" },
+			{ dir: "/assets/images/gallery/018.jpg" },
+			{ dir: "/assets/images/gallery/019.jpg" },
+			{ dir: "/assets/images/gallery/020.jpg" },
+			{ dir: "/assets/images/gallery/021.jpg" },
+			{ dir: "/assets/images/gallery/022.jpeg" },
+			{ dir: "/assets/images/gallery/023.jpeg" },
+			{ dir: "/assets/images/gallery/024.jpeg" },
 		],
 	},
 	ext: "jpg",
