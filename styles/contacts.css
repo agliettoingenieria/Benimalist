@@ -1,12 +1,18 @@
 main {
 	text-align: center;
+	display: grid;
+	margin-top: var(--nav-height);
+	grid-template-rows: repeat(3, auto);
+	align-items: flex-start;
+	height: 100vh;
+	gap: 2vw;
 }
 
 iframe {
+	margin-inline: auto;
 	width: 75%;
-	height: 560px;
+	height: 80vmin;
 	border-radius: 1rem;
-	margin-block: 2rem 1rem;
 }
 
 .socials__container_list {
@@ -51,7 +57,7 @@ iframe {
 
 .contacts_footer {
 	background-color: #232323;
-	padding: 2rem;
+	padding-block: 2rem;
 }
 
 .contacts_footer ul {
@@ -64,7 +70,7 @@ iframe {
 
 .contacts_footer .contact {
 	color: #84c4ff93;
-	font-size: 1rem;
+	font-size: 2.5vmin;
 }
 
 .contacts_footer .contact:hover a {
