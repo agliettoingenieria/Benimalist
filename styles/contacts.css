@@ -56,6 +56,7 @@ iframe {
 }
 
 .contacts_footer {
+	align-self: flex-end;
 	background-color: #232323;
 	padding-block: 2rem;
 }
