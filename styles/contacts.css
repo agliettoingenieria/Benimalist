@@ -2,10 +2,11 @@ main {
 	text-align: center;
 	display: grid;
 	margin-top: var(--nav-height);
-	grid-template-rows: repeat(3, auto);
+	grid-template-rows: min-content min-content auto;
 	align-items: flex-start;
-	height: 100vh;
-	gap: 2vw;
+	height: 100%;
+	gap: 5vw;
+	padding-bottom: 2rem;
 }
 
 iframe {
@@ -55,13 +56,13 @@ iframe {
 	}
 }
 
-.contacts_footer {
-	align-self: flex-end;
+.contacts {
+	align-self: flex-start;
 	background-color: #232323;
-	padding-block: 2rem;
+	padding-block: 1rem;
 }
 
-.contacts_footer ul {
+.contacts ul {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
@@ -69,15 +70,15 @@ iframe {
 	gap: 2rem;
 }
 
-.contacts_footer .contact {
+.contacts .contact {
 	color: #84c4ff93;
 	font-size: 2.5vmin;
 }
 
-.contacts_footer .contact:hover a {
+.contacts .contact:hover a {
 	text-decoration: underline !important;
 }
 
-.contacts_footer .contact:last-of-type {
+.contacts .contact:last-of-type {
 	color: #b1cae2e0;
 }
