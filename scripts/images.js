@@ -5,6 +5,7 @@ export default {
 			{ dir: "/assets/images/gallery/001.jpeg" },
 			{ dir: "/assets/images/gallery/002.jpeg" },
 			{ dir: "/assets/images/gallery/003.jpeg" },
+			{ dir: "/assets/images/gallery/003b.jpeg" },
 			{ dir: "/assets/images/gallery/004.jpeg" },
 			{ dir: "/assets/images/gallery/005.jpeg" },
 			{ dir: "/assets/images/gallery/006.jpeg" },
